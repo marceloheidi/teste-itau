@@ -4,11 +4,11 @@ import java.util.stream.Stream;
 
 public enum NotasEnum {
 
-    NOTA_100(100, 1, "R$100"),
-    NOTA_50(50, 1, "R$50"),
-    NOTA_20(20, 2, "R$20"),
-    NOTA_10(10,1, "R$10"),
-    NOTA_5(5,1, "R$5"),
+    NOTA_100(100, 9999, "R$100"),
+    NOTA_50(50, 9999, "R$50"),
+    NOTA_20(20, 9999, "R$20"),
+    NOTA_10(10,9999, "R$10"),
+    NOTA_5(5,9999, "R$5"),
     NOTA_2(2,1, "R$2");
 
     public final int valor;
