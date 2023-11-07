@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class CaixaEletronicoServiceImpl implements CaixaEletronicoService {
 
+    //Serviço que calula a qtde de notas para saque em relação ao valor digitado
     @Override
     public CaixaEletronicoResponseDto retornaNotas(int valorEntrada) {
 
@@ -37,10 +38,12 @@ public class CaixaEletronicoServiceImpl implements CaixaEletronicoService {
                         .build();
     }
 
+    //Metodo que contabiliza a qtde de cédulas à serem entregues
     private Integer retornaQtdeNotas(int valorEntrada, NotasEnum notasEnum) {
         return Math.min(Math.max((valorEntrada / notasEnum.valor), 0), notasEnum.qtdeCedulas);
     }
 
+    //Metodo que cria a descricao para o retorno
     private String criaDescricao(NotasRetornoDto notasRetorno) {
         return "Entregar " + notasRetorno.getQtdeNota() + " nota(s) de R$" + notasRetorno.getValrNota() + ".";
     }
