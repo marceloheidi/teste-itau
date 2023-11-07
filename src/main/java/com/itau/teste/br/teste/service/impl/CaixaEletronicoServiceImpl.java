@@ -38,7 +38,7 @@ public class CaixaEletronicoServiceImpl implements CaixaEletronicoService {
                         .build();
     }
 
-    //Metodo que contabiliza a qtde de cédulas à serem entregues
+    //Metodo que contabiliza a qtde de cédulas à serem entregues baseado na qtde de cédulas disponíveis
     private Integer retornaQtdeNotas(int valorEntrada, NotasEnum notasEnum) {
         return Math.min(Math.max((valorEntrada / notasEnum.valor), 0), notasEnum.qtdeCedulas);
     }
